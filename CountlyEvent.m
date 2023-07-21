@@ -39,7 +39,7 @@ NSString* const kCountlyEventKeyDuration      = @"dur";
     eventData[kCountlyEventKeyHourOfDay] = @(self.hourOfDay);
     eventData[kCountlyEventKeyDayOfWeek] = @(self.dayOfWeek);
     // make it consistent with Android
-    eventData[kCountlyEventKeyDuration] = [self.key isEqualToString:kCountlyReservedEventView] ? @(round(self.duration)) : @(self.duration);
+    eventData[kCountlyEventKeyDuration] = [self.key isEqualToString:kCountlyReservedEventView] ? @(round(self.duration)) : @(round(self.duration*100)/100);
     return eventData;
 }
 
